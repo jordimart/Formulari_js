@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mortgage Calculator</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script type="text/javascript" src="bin/main.js"></script>
+    <style>
+        .form-group.required .control-label:after {
+            content: "*";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form name="formulario_data" method="POST" class="form-horizontal" id="formulario_data" onsubmit='return false;'>
+            <h2 class="bg-primary" style="padding:15px 15px 15px 55px;">Mortgage Calculator</h2>
+            <div class="row">
+                <div class="col-sm-6">
+                    <fieldset>
+
+                        <legend class="text-info">Economic data</legend>
+                        <div class="form-group required">
+                            <label class="control-label col-sm-6">Monthly income:</label>
+                            <div class="col-sm-6">
+                                <input required pa-type="money" id="ingresos_mensuales" name="ingresos_mensuales" placeholder="Ingresos mensuales" type="text" class="form-control">
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+                </div>
+                <div class="col-sm-6">
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+
+                </div>
+                <div class="col-sm-4">
+                    <fieldset>
+
+                        <legend class="text-info">RESULTS</legend>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6">Monthly quote</label>
+                            <div class="col-sm-6">
+                                <input id="monthlyQuote" name="monthlyQuote" readonly pa-type="calculated" pa-calculus="(capital*interestApplied/12)/(100(1-Math.pow(1+((interestApplied/12)/100),(-1)*period*12))" placeholder="Monthly quote" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-6">Interest rate applied</label>
+                            <div class="col-sm-6">
+                                <input id="interestApplied" name="interestApplied" readonly pa-type="calculated" pa-calculus="ACUMULATED" placeholder="Interest Applied" type="text" class="form-control">
+                            </div>
+                        </div>
+                        <input name="Submit" pa-enabled="morgage_form==valid" type="button" value="JSON" onclick="" />
+                </div>
+                <div class="col-sm-4">
+                    This is the end.
+                </div>
+            </div>
+
+        </form>
+
+    </div>
+</body>
+
+</html>
