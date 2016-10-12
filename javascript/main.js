@@ -4,8 +4,7 @@ var Validate = require('./validate');
 window.onload = function() {
 
   var validate = new Validate(); // creamos un validate
-  var formulari = new Formulari("formulario_data",
-    validate); // creamos un formulario cogiendo la
+  var formulari = new Formulari(validate); // creamos un formulario cogiendo la
   // referencia del DOM y le inyectamos
   // validate
 
@@ -16,5 +15,6 @@ window.onload = function() {
   };
   // cada vez que pulsemos una letra activara la funcion StartForm de formulari
   window.addEventListener("keyup", startForm, false);
+  document.addEventListener("click", startForm, false);
 
 };
