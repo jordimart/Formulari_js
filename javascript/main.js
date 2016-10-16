@@ -1,20 +1,25 @@
+/* global month_ingress */
+
 var Formulari = require('./Form');
-var Validate = require('./validate');
+var Economic = require('./economic');
+var Data_user = require('./data_user');
 
-window.onload = function() {
+window.onload = function () {
 
-  var validate = new Validate(); // creamos un validate
-  var formulari = new Formulari(validate); // creamos un formulario cogiendo la
-  // referencia del DOM y le inyectamos
-  // validate
+    var formulari = new Formulari(); // creamos un formulario cogiendo la
+    var economic = new Economic(formulari); 
+    var data_user = new Data_user(formulari); 
+    // referencia del DOM y le inyectamos
+    // validate
 
-  var startForm = function(event) {
+    var start = function () {
 
-    formulari.start();
+        formulari.notificar();
+        formulari.submit();
 
-  };
-  // cada vez que pulsemos una letra activara la funcion StartForm de formulari
-  window.addEventListener("keyup", startForm, false);
-  document.addEventListener("click", startForm, false);
+    };
+
+    //document.addEventListener('keyup',start,false);
+    document.addEventListener('click', start, false);
 
 };

@@ -8,11 +8,11 @@ function Subject() {
 
 // Context represents an object instance (Ball in our case)
 Subject.prototype.Notify =
-  function(context) {
+  function(value) {
     var m_count = this.observers.Count();
 
     for (var i = 0; i < m_count; i++)
-      this.observers.GetAt(i).Update(context);
+      this.observers.GetAt(i).Update(value);
   }
 
 Subject.prototype.AddObserver =

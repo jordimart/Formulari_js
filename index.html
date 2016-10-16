@@ -27,7 +27,7 @@
                         <div class="form-group required">
                             <label class="control-label col-sm-6">Monthly income:</label>
                             <div class="col-sm-6">
-                                <input required pa-type="money" id="ingresos_mensuales" name="ingresos_mensuales" placeholder="Ingresos mensuales" type="text" class="form-control">
+                                <input required data="money" id="ingresos_mensuales" name="ingresos_mensuales" placeholder="Ingresos mensuales" type="text" class="form-control">
                             </div>
 
                         </div>
@@ -35,7 +35,7 @@
                         <div class="form-group required">
                             <label class="control-label col-sm-6">CAPITAL:</label>
                             <div class="col-sm-6">
-                                <input required pa-type="money" id="capital" name="capital" placeholder="capital" type="text" class="form-control">
+                                <input required data="money" id="capital" name="capital" placeholder="capital" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -52,28 +52,28 @@
                         <div class="form-group">
                             <label class="control-label col-sm-6">EURIBOR:</label>
                             <div class="col-sm-6">
-                                <input id="euribor" name="euribor" placeholder="euribor" type="text" class="form-control">
+                                <input data="porcentage" id="euribor" name="euribor" placeholder="euribor" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-6">DIFFERENTIAL:</label>
                             <div class="col-sm-6">
-                                <input id="differential" pa-required="interest_rate_type==variable then interestApplied+=percentage" pa-type="percentage" name="differential" placeholder="differential" type="text" class="form-control">
+                                <input id="differential" data="porcentage" name="differential" placeholder="differential" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-6">Fixed interest rate</label>
                             <div class="col-sm-6">
-                                <input id="fixed_interest" pa-required="interest_rate_type==fixed then interestApplied+=fixed_interest" pa-type="percentage" name="fixed_interest" placeholder="Fixed interest rate" type="text" class="form-control">
+                                <input readonly id="fixed_interest" data="porcentage" name="fixed_interest" placeholder="Fixed interest rate" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group required">
                             <label class="control-label col-sm-6">Period</label>
                             <div class="col-sm-6">
-                                <input id="period" required pa-type="number" pa-range="min:5,max:100" name="period" placeholder="How many years?" type="text" class="form-control">
+                                <input id="period" required data="number" pa-range="min:5,max:100" name="period" placeholder="How many years?" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -86,45 +86,45 @@
                         <div class="form-group required">
                             <label class="control-label col-sm-6">NIF:</label>
                             <div class="col-sm-6">
-                                <input id="nif" name="nif" required pa-type="nif" placeholder="With char letter at the end, please." type="text" class="form-control" value=>
+                                <input id="nif" name="nif" required data="nif" placeholder="With char letter at the end, please." type="text" class="form-control" value=>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="control-label col-sm-6">NAME:</label>
                             <div class="col-sm-6">
-                                <input id="nombre" name="name" required pa-type="text" placeholder="Name" type="text" class="form-control" value=>
+                                <input id="nombre" name="name" required data="text" placeholder="Name" type="text" class="form-control" value=>
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="control-label col-sm-6">First Surname:</label>
                             <div class="col-sm-6">
-                                <input id="surname1" name="surname1" required pa-type="text" placeholder="First Surname" type="text" class="form-control">
+                                <input id="surname1" name="surname1" required data="text" placeholder="First Surname" type="text" class="form-control">
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label class="control-label col-sm-6">Second Surname:</label>
                             <div class="col-sm-6">
-                                <input id="surname2" name="surname2" pa-type="text" placeholder="Second Surname" type="text" class="form-control">
+                                <input id="surname2" name="surname2" data="text" placeholder="Second Surname" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-6">AGE:</label>
                             <div class="col-sm-6">
-                                <input id="age" name="age" pa-type="age" pa-range="min:18;max:100" placeholder="Don't lie" type="text" class="form-control" value=>
+                                <input id="age" name="age" data="age" pa-range="min:18;max:100" placeholder="Don't lie" type="text" class="form-control" value=>
                             </div>
 
                         </div>
                         <div class="form-group">
                             <label class="control-label col-sm-6">MOBILE:</label>
                             <div class="col-sm-6">
-                                <input id="mobile" pa-type="phone" name="mobile" placeholder="Mobile number" type="text" class="form-control">
+                                <input id="mobile" data="phone" name="mobile" placeholder="Mobile number" type="text" class="form-control">
                             </div>
                         </div>
                         <div class="form-group required">
                             <label class="control-label col-sm-6">EMAIL</label>
                             <div class="col-sm-6">
-                                <input id="email" name="email" required pa-type="email" placeholder="email" type="text" class="form-control">
+                                <input id="email" name="email" required data="email" placeholder="email" type="text" class="form-control">
                             </div>
                         </div>
 
@@ -173,7 +173,7 @@
                                 <input id="interestApplied" name="interestApplied" readonly pa-type="calculated" pa-calculus="ACUMULATED" placeholder="Interest Applied" type="text" class="form-control">
                             </div>
                         </div>
-                        <input name="Submit" pa-enabled="morgage_form==valid" type="button" value="JSON" onclick="" />
+                        <input disabled name="Submit" id="Submit" pa-enabled="morgage_form==valid" type="button" value="JSON" onclick="" />
                 </div>
                 <div class="col-sm-4">
                     This is the end.
